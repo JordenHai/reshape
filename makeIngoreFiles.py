@@ -51,7 +51,7 @@ def ignoreExFilename(filename,pout=".\\output"):
 def returnToXls(subdirectorypath,pout=".\\out"):
     xls = xlwt.Workbook(encoding='utf-8')
     subdirectory = os.listdir(subdirectorypath)
-    print(subdirectory,subdirectorypath)
+    # print(subdirectory,subdirectorypath)
     savename = remakeFilename(subdirectorypath)
     flag = ignoreExFilename(filename=savename)
     savedir = pout + "\\" 
@@ -98,3 +98,4 @@ if __name__ == "__main__":
     pout = ".\\output"
     for subdirectorypath in dfs:
         returnToXls(subdirectorypath,pout)
+    print("end~")
