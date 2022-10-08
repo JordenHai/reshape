@@ -52,12 +52,15 @@ def returnToXls(subdirectorypath,pout=".\\out"):
     xls = xlwt.Workbook(encoding='utf-8')
     subdirectory = os.listdir(subdirectorypath)
     # print(subdirectory,subdirectorypath)
+    # print('[{name:<46}\tx'.format(name=name+']')
+    print('{name:<47}'.format(name=subdirectorypath),": ","%-3d"%(len(subdirectory)))
     savename = remakeFilename(subdirectorypath)
     flag = ignoreExFilename(filename=savename)
     savedir = pout + "\\" 
     if flag:
         if subdirectory:
             for file in subdirectory:
+                
                 sheet_name = file[-13:-4]
                 sheet = xls.add_sheet(sheet_name,cell_overwrite_ok=False)
                 filename = subdirectorypath + "\\" + file
